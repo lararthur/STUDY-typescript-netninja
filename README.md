@@ -8,9 +8,11 @@ This will create a `tsconfig.json` file. There, we have options of the transpili
 
 Here are some interesting options for us to check:
 
-**"target": "es5",           // Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'.**
-**"outDir": "./public",      // Redirect output structure to the directory.**
-**"rootDir": "./src",        // Specify the root directory of input files. Use to control the output directory structure with --outDir.**
+```
+"target": "es5",           // Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'.
+"outDir": "./public",      // Redirect output structure to the directory.
+"rootDir": "./src",        // Specify the root directory of input files. Use to control the output directory structure with --outDir.
+```
 
 Now, in order to `"rootDir"` option to work, you must add a property right next to `"compilerOptions"` property:
 
