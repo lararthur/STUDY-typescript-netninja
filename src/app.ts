@@ -1,44 +1,20 @@
-// LESSON 15 - Interfaces - https://www.youtube.com/watch?v=VbW6vWTaHOY&list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI&index=15
+// LESSON 16 - Interfaces with Classes - https://www.youtube.com/watch?v=XPGFqx8Vg-Y&list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI&index=16
 
-interface IsPerson {
-    name: string;
-    age: number;
-    speak(a: string): void;
-    spend(a: number): number;
-};
+import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+import { HasFormatter } from './interfaces/HasFormatter.js';
 
-const me: IsPerson = {
-    name: 'shawn',
-    age: 30,
-    speak(text: string): void {
-        console.log(text);
-    },
-    spend(amount: number): number {
-        console.log('I spent', amount);
-        return amount;
-    }
-};
+// let docOne: HasFormatter;
+// let docTwo: HasFormatter;
 
-console.log(me);
+// docOne = new Invoice('yoshi', 'web worl', 250);
+// docTwo = new Payment('mario', 'plumbing work', 200);
 
-const greetPerson = (person: IsPerson) => {
-    console.log('hello', person.name);
-}
+// let docs: HasFormatter[] = [];
+// docs.push(docOne);
+// docs.push(docTwo);
 
-greetPerson(me);
-
-import { Invoice } from './classes/Invoice.js'
-
-const invOne = new Invoice('mario', 'work on mario site', 250);
-const invTwo = new Invoice('luigi', 'work on luigi site', 300);
-
-let invoices: Invoice[] = [];
-invoices.push(invOne);
-invoices.push(invTwo);
-
-invoices.forEach(inv => {
-    console.log(inv.client, inv.amount, '-', inv.format());
-});
+// console.log(docs);
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 
@@ -51,10 +27,12 @@ const amount = document.querySelector('#amount') as HTMLInputElement;
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
 
-    console.log(
-        type.value,
-        tofrom.value,
-        details.value,
-        amount.valueAsNumber,
-    );
+    let doc: HasFormatter;
+    if(type.value === 'invoice') {
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    } else {
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    }
+
+    console.log(doc.format());
 });
