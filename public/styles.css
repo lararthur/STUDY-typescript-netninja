@@ -1,6 +1,7 @@
 body{
   margin: 0;
-  font-family: Roboto; 
+  font-family: Roboto;
+  background: #252525;
 }
 .wrapper{
   max-width: 960px;
@@ -26,11 +27,11 @@ li h4{
   text-transform: capitalize;
 }
 li p{
-  color: #333;
+  color: #e1e1e1;
   margin: 8px 0 0;
 }
 footer{
-  background: #eee;
+  background: #525252;
   padding: 60px;
   margin-top: 60px;
 }
@@ -43,7 +44,7 @@ label{
   display: block;
   font-weight: bold;
   font-size: 0.8em;
-  color: #333;
+  color: #e1e1e1;
   margin: 16px 0 6px;
 }
 input, select{
