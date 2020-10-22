@@ -1,11 +1,23 @@
 "use strict";
-// LESSON 9 Type Aliases - https://www.youtube.com/watch?v=AmpwfbdFYL8&list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI&index=9
-var legDetails = function (uid, item) {
-    console.log(item + " has a uid of " + uid);
+// LESSON 10 - Function Signatures - https://www.youtube.com/watch?v=TZNbzyY6hMU&list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI&index=10
+// let greet: Function;
+// example 1
+var greet;
+greet = function (name, greeting) {
+    console.log(name + " says: " + greeting);
 };
-var greet = function (user) {
-    console.log(user.name + " says hello");
+// example 2
+var calc;
+calc = function (numOne, numTwo, action) {
+    if (action == 'add') {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
 };
-var greetAgain = function (user) {
-    console.log(user.name + " says hello");
+// example 3
+var logDetails;
+logDetails = function (ninja) {
+    console.log(ninja.name + " is " + ninja.age + " years old");
 };
