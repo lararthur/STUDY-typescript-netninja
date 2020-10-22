@@ -1,4 +1,31 @@
-// LESSON 14 - Modules - https://www.youtube.com/watch?v=EpOPR03z4Vw&list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI&index=14
+// LESSON 15 - Interfaces - https://www.youtube.com/watch?v=VbW6vWTaHOY&list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI&index=15
+
+interface IsPerson {
+    name: string;
+    age: number;
+    speak(a: string): void;
+    spend(a: number): number;
+};
+
+const me: IsPerson = {
+    name: 'shawn',
+    age: 30,
+    speak(text: string): void {
+        console.log(text);
+    },
+    spend(amount: number): number {
+        console.log('I spent', amount);
+        return amount;
+    }
+};
+
+console.log(me);
+
+const greetPerson = (person: IsPerson) => {
+    console.log('hello', person.name);
+}
+
+greetPerson(me);
 
 import { Invoice } from './classes/Invoice.js'
 
