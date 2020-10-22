@@ -1,10 +1,31 @@
-// LESSON 11 - The DOM & Type Casting - https://www.youtube.com/watch?v=hcuKd-Q_tP8&list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI&index=11
+// LESSON 12 - Classes - https://www.youtube.com/watch?v=OsFwOzr3_sE&list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI&index=12
 
-const anchor = document.querySelector('a')!;
+// classes
+class Invoice {
+    client: string;
+    details: string;
+    amount: number;
 
-// if(anchor) console.log(anchor.href);
+    constructor(c: string, d: string, a: number) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
 
-// console.log(anchor.href);
+    format() {
+        return `${this.client} owes $${this.amount} for ${this.details}`;
+    }
+}
+
+const invOne = new Invoice('mario', 'work on mario site', 250);
+const invTwo = new Invoice('luigi', 'work on luigi site', 300);
+
+let invoices: Invoice[] = [];
+
+invoices.push(invOne);
+invoices.push(invTwo);
+
+console.log(invoices);
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 
