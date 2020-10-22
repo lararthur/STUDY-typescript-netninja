@@ -10,6 +10,7 @@ Here are some interesting options for us to check:
 
 ```
 "target": "es5",           // Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'.
+"module": "es2015",        // (could be commonjs if working with node! But here we'll use es2015 to work with modern browsers only) - Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'.     
 "outDir": "./public",      // Redirect output structure to the directory.
 "rootDir": "./src",        // Specify the root directory of input files. Use to control the output directory structure with --outDir.
 ```
