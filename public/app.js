@@ -1,15 +1,11 @@
-// LESSON 16 - Interfaces with Classes - https://www.youtube.com/watch?v=XPGFqx8Vg-Y&list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI&index=16
+// LESSON 17 - Rendering an HTML Template - https://www.youtube.com/watch?v=X-mUYxLjqLY&list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI&index=17
 import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
-// let docOne: HasFormatter;
-// let docTwo: HasFormatter;
-// docOne = new Invoice('yoshi', 'web worl', 250);
-// docTwo = new Payment('mario', 'plumbing work', 200);
-// let docs: HasFormatter[] = [];
-// docs.push(docOne);
-// docs.push(docTwo);
-// console.log(docs);
+import { ListTemplate } from './classes/ListTemplate.js';
 var form = document.querySelector('.new-item-form');
+// list template instance
+var ul = document.querySelector('ul');
+var list = new ListTemplate(ul);
 // inputs
 var type = document.querySelector('#type');
 var tofrom = document.querySelector('#tofrom');
@@ -24,5 +20,5 @@ form.addEventListener('submit', function (e) {
     else {
         doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
     }
-    console.log(doc.format());
+    list.render(doc, type.value, 'end');
 });
